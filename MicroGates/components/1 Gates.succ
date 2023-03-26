@@ -1,0 +1,189 @@
+#############
+# Circuitry #
+#############
+
+NOT:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                scale: (1.0, 0.5, 1.0)
+                position: (0.0, 0.0, 0.0)
+                color: FFFFFF
+        inputs:
+            -
+                position: (0.0, 0.5, -0.25)
+                length: 0.4
+        outputs:
+            -
+                position: (0, 0.3, 0.2499)
+                startOn: true
+    logicCode: LogicWorld.LogicCode.Inverter
+    placingRules:
+        gridPlacingDimensions: (1, 1)
+
+OR:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                scale: (1.0, 0.5, 1)
+                position: (0.0, 0.0, 0.0)
+                color: 8516EC
+        inputs:
+            -
+                position: (-0.25, 0.5, -0.25)
+                length: 0.4
+            -
+                position: (0.25, 0.5, -0.25)
+                length: 0.4
+        outputs:
+            -
+                position: (0.0, 0.3, 0.2499)
+    logicCode: MicroGates.Server.Or
+    placingRules:
+        gridPlacingDimensions: (1, 1)
+
+XOR:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                scale: (1.0, 0.5, 1)
+                position: (0.0, 0.0, 0.0)
+                color: 1D2F8E
+        inputs:
+            -
+                position: (-0.25, 0.5, -0.25)
+                length: 0.4
+            -
+                position: (0.25, 0.5, -0.25)
+                length: 0.4
+        outputs:
+            -
+                position: (0.0, 0.3, 0.2499)
+    logicCode: MicroGates.Server.Xor
+    placingRules:
+        gridPlacingDimensions: (1, 1)
+
+AND:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                scale: (1.0, 0.5, 1)
+                position: (0.0, 0.0, 0.0)
+                color: 6E1C1C
+        inputs:
+            -
+                position: (-0.25, 0.5, -0.25)
+                length: 0.4
+            -
+                position: (0.25, 0.5, -0.25)
+                length: 0.4
+        outputs:
+            -
+                position: (0.0, 0.3, 0.2499)
+    logicCode: MicroGates.Server.And
+    placingRules:
+        gridPlacingDimensions: (1, 1)
+
+DLatch:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                color:349F16
+                position: (0.0, 0.0, 0.0)
+                scale: (1.0, 0.5, 1.0)
+        inputs:
+            -
+                position: (-0.25, 0.5, -0.25)
+                length: 0.3
+            -
+                position: (0.25, 0.5, -0.25)
+                length: 0.4
+        outputs:
+            -
+                position: (0.0, 0.3, 0.2499)
+    logicCode: LogicWorld.LogicCode.DLatch
+    placingRules:
+        gridPlacingDimensions: (1, 1)
+
+Relay:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                color: 7E133B
+                position: (0.0, 0.0, 0.0)
+                scale: (1.0, 0.5, 1.0)
+        inputs:
+            -
+                position: (0.0, 0.5, 0.0)
+                length: 0.4
+            -
+                position: (0.0, 0.5, -0.3499)
+                length: 0.3
+            -
+                position: (0.0, 0.5, 0.3499)
+                length: 0.3
+
+    logicCode: LogicWorld.LogicCode.Relay
+    placingRules:
+        gridPlacingDimensions: (1, 1)
+
+BufferedDiode:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                scale: (1.0, 0.5, 1.0)
+                position: (0.0, 0.0, 0.0)
+                color: FFFFFF
+        inputs:
+            -
+                position: (0.0, 0.5, -0.25)
+                length: 0.4
+        outputs:
+            -
+                position: (0.0, 0.3, 0.2499)
+    logicCode: LogicWorld.LogicCode.Buffer
+    placingRules: Standard
+
+Diode:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                scale: (1.0, 0.5, 1.0)
+                position: (0.0, 0.0, 0.0)
+                color: 8E0E5F
+        inputs:
+            -
+                position: (0.0, 0.5, -0.25)
+                length: 0.4
+            - #TO DO: Make this "input" look as an output
+                position: (0.0, 0.5, 0.3499)
+                length: 0.2
+    logicCode: LogicWorld.LogicCode.FastBuffer
+    placingRules:
+        offsetDimensions: (1, 2)
+        gridPlacingDimensions: (1, 4)
+        allowFineRotation: false
+      
+
+
+
+   
+        
+    
+
