@@ -1,0 +1,8 @@
+ID: MicroGatesClient
+Name: MicroGates (Client)
+Author: LOOPS & Solace
+Version: 0.0.3
+Priority: 1
+ClientOnly: True
+Dependencies:
+    - MicroGateMenu

@@ -1,0 +1,44 @@
+NOT:
+    column: "MicroGates"
+    category: "Logic"
+    prefab:
+        blocks:
+            -
+                scale: (1.0, 0.5, 1.0)
+                position: (0.0, 0.0, 0.0)
+                color: FFFFFF
+        inputs:
+            -
+                position: (0.0, 0.5, -0.25)
+                length: 0.4
+        outputs:
+            -
+                position: (0, 0.3, 0.2499)
+                startOn: true
+    logicCode: LogicWorld.LogicCode.Inverter
+    placingRules:
+        gridPlacingDimensions: (1, 1)
+
+ResizableOrGate:
+    column: "MicroGates"
+    category: "Logic"
+    prefab: dynamic
+    logicCode: MicroGates.Server.Or
+    clientCode: MicroGates.Resizable.ResizableVoidClient
+    placingRules: dynamic
+
+ResizableAndGate:
+    column: "MicroGates"
+    category: "Logic"
+    prefab: dynamic
+    logicCode: MicroGates.Server.And
+    clientCode: MicroGates.Resizable.ResizableVoidClient
+    placingRules: dynamic
+
+ResizableXorGate:
+    column: "MicroGates"
+    category: "Logic"
+    prefab: dynamic
+    logicCode: MicroGates.Server.Xor
+    clientCode: MicroGates.Resizable.ResizableVoidClient
+    placingRules: dynamic
