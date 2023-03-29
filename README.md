@@ -14,7 +14,7 @@ This mod also moves I/O of the components to the top, making it easier to build 
 ![Logic](Logic2.jpg)
 
 Also includes a redesign of the vanilla ThroughPeg and the MiniSocket to be more ergonomic with the rest of the components.
-![Connect](connect.jpg)
+![Connect](connectOne.jpg)(connectTwo.jpg)
 
 # Circuit Examples
 Full adder using some of the new components.

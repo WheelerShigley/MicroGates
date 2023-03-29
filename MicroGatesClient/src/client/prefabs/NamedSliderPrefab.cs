@@ -20,7 +20,7 @@ namespace MicroGates.Client.Prefabs {
 				rectTransform.anchorMax = new Vector2(0, 0);
 				rectTransform.pivot = new Vector2(0.5f, 0.5f);
 				rectTransform.anchoredPosition = new Vector2(0, 0);
-				rectTransform.sizeDelta = new Vector2(width, 48.2f * heightModifier);
+				rectTransform.sizeDelta = new Vector2(width, heightModifier);
 			}
 			gameObject.AddComponent<CanvasRenderer>();
 

@@ -49,7 +49,7 @@ Relay:
     placingRules:
         gridPlacingDimensions: (1, 1)
 
-BufferedDiode:
+DelayDiode:
     column: "MicroGates"
     category: "Logic"
     prefab:
@@ -57,7 +57,7 @@ BufferedDiode:
             -
                 scale: (1.0, 0.5, 1.0)
                 position: (0.0, 0.0, 0.0)
-                color: FFFFFF
+                color: C7072F
         inputs:
             -
                 position: (0.0, 0.5, -0.25)
@@ -80,7 +80,7 @@ Diode:
         inputs:
             -
                 position: (0.0, 0.5, -0.25)
-                length: 0.4
+                length: 0.25
             - #TO DO: Make this "input" look as an output
                 position: (0.0, 0.5, 0.3499)
                 length: 0.2

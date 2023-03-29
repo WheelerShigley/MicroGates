@@ -1,9 +1,0 @@
-ID: CustomWirePlacer
-Name: CustomWirePlacer
-Author: Ecconia
-Version: 1.2.1
-Priority: 0
-ClientOnly: true
-Dependencies:
-    - HarmonyForLogicWorld
-    - EccsWindowHelper

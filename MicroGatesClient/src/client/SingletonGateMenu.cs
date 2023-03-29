@@ -41,26 +41,26 @@ namespace MicroGates.Client {
             contentPlane = constructContent();
             WindowBuilder wb = new WindowBuilder {
                 x = 0, y = 0, w = 0, h = 0,
-                rootName = "GateSizeMenu",
-                titleKey = "GateSizeMenu.EditGateMenu",
+                rootName = "GateMenu",
+                titleKey = "GateMenu.EditGateMenu",
                 contentPlane = contentPlane,
                 singletonClass = typeof(SingletonGateMenu),
             };
             var controller = wb.build();
             WindowBuilder.updateContentPlane(contentPlane);
-            Instance.gameObject.AddComponent<RamMenu>().SetupListener();
+            Instance.gameObject.AddComponent<GateMenu>().SetupListener();
             MicroGates.Shared.MicroGateMenu.RegisterMenu(Instance);
             OnMenuHidden += GameStateManager.TransitionBackToBuildingState;
         }
 
         private static GameObject constructContent() {
-            GameObject gameObject = WindowHelper.makeGameObject("CRM: ContentPlane");
+            GameObject gameObject = WindowHelper.makeGameObject("GateMenu: ContentPlane");
             RectTransform rectTransform = gameObject.AddComponent<RectTransform>();
             {
                 rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
                 rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                 rectTransform.pivot = new Vector2(0.5f, 0.5f);
-                rectTransform.sizeDelta = new Vector2(0, 0);
+                rectTransform.sizeDelta = new Vector2(10, 10);
                 rectTransform.anchoredPosition = new Vector2(0, 0);
             }
 
@@ -76,19 +76,19 @@ namespace MicroGates.Client {
             verticalLayoutGroup.spacing = 20;
             //Now here is where we add the prefab children
             //Fixed height toggle thing
-            GameObject heightThingy = WindowHelper.makeGameObject("CRM: Toggle Height");
+            GameObject heightThingy = WindowHelper.makeGameObject("GateMenu: Toggle Height");
             RectTransform rectTransform2 = heightThingy.AddComponent<RectTransform>();
             {
                 rectTransform2.anchorMin = new Vector2(0.5f, 0.5f);
                 rectTransform2.anchorMax = new Vector2(0.5f, 0.5f);
                 rectTransform2.pivot = new Vector2(0.5f, 0.5f);
-                rectTransform2.sizeDelta = new Vector2(25.0f, 12.5f); //define size here
+                rectTransform2.sizeDelta = new Vector2(12.5f, 12.5f); //define size here
                 rectTransform2.anchoredPosition = new Vector2(0, 0);
             }
             heightThingy.SetActive(true);
             gameObject.addChild(heightThingy);
-            //Add slider
-            widthPegSliderTransform = Prefabs.NamedSliderPrefab.generateNamedSlider("CRM.BitWidth", 830, 300, 400, 1, out widthPegSlider);
+            //Add slider: generateNamedSlider("CRM.BitWidth", fontSize?, TitleOffset, SliderLength, 1, out widthPegSlider);
+            widthPegSliderTransform = Prefabs.NamedSliderPrefab.generateNamedSlider("GateMenu.Size", 360, 360 + 20*("Input Count".Length), 360, 50, out widthPegSlider);
             widthPegSlider.SliderInterval = 1.0f;
             widthPegSlider.Min = 2.0f;
             widthPegSlider.Max = 64.0f;
@@ -99,7 +99,7 @@ namespace MicroGates.Client {
         }
     }
 
-    public class RamMenu : EditComponentMenu {
+    public class GateMenu : EditComponentMenu {
         bool is_resizable = false;
         protected override void OnStartEditing() {
             if (FirstComponentBeingEdited.ClientCode is MicroGates.Resizable.ResizableVoidClient) {

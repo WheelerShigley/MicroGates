@@ -1,0 +1,9 @@
+﻿ID: MicroGateMenu
+Name: MicroGateMenu
+Author: Solace (based on Cheese)
+Version: 1.0
+Priority: 5
+ClientOnly: True
+Dependencies:
+    - EccsWindowHelper
+    - HarmonyForLogicWorld
